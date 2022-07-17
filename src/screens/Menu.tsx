@@ -1,11 +1,4 @@
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
-import React from "react";
+import { ScrollView, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 const Menu = ({ navigation }: { navigation: any }) => {
   return (
@@ -21,6 +14,12 @@ const Menu = ({ navigation }: { navigation: any }) => {
         style={styles.menuItem}
       >
         <Text>Basic Pan Gesture</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Interpolate Scroll View")}
+        style={styles.menuItem}
+      >
+        <Text>Interpolate Scroll View</Text>
       </TouchableOpacity>
     </ScrollView>
   );

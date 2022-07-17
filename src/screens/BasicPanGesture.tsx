@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
@@ -10,7 +10,7 @@ import Animated, {
   withSpring,
 } from "react-native-reanimated";
 
-const LENGTH = 100.0;
+const LENGTH = 75.0;
 const CIRCLE_RADIUS = LENGTH * 2;
 
 type ContextType = {
@@ -36,7 +36,7 @@ const BasicPanGesture = () => {
     },
     onEnd: () => {
       const distance = Math.sqrt(positionX.value ** 2 + positionY.value ** 2);
-      if (distance < CIRCLE_RADIUS) {
+      if (distance < CIRCLE_RADIUS + LENGTH / 2) {
         positionX.value = withSpring(0);
         positionY.value = withSpring(0);
       }
